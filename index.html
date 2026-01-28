@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1 class="calc">Calculator</h1>
+  <div class="calculator" id="calculator">
+    <input class="display" type="text" id="display" value="0" readonly>
+    <div class="buttons" id="buttons">
+      <!-- Row 1 - Special functions -->
+      <button class="btn percent" id="percent" onclick="appendToDisplay('%')">%</button>
+      <button class="btn CE" id="clearE" onclick="clearEntry()">CE</button>
+      <button class="btn clear" id="clear" onclick="clearDisplay()">C</button>
+      <button class="btn" id="backspace" onclick="deleteLast()">←</button>
+
+      <!-- Row 2 - Advanced functions -->
+      <button class="btn" id="inverse" onclick="inverse()">1/x</button>
+      <button class="btn" id="square" onclick="square()">x²</button>
+      <button class="btn" id="sqrt" onclick="squareRoot()">√x</button>
+      <button class="btn operator" id="/" onclick="appendToDisplay('/')">÷</button>
+
+      <!-- Row 3 - Numbers 7-9 -->
+      <button class="btn" id="7" onclick="appendToDisplay('7')">7</button>
+      <button class="btn" id="8" onclick="appendToDisplay('8')">8</button>
+      <button class="btn" id="9" onclick="appendToDisplay('9')">9</button>
+      <button class="btn operator" id="*" onclick="appendToDisplay('*')">x</button>
+
+      <!-- Row 4 - Numbers 4-6 -->
+      <button class="btn" id="4" onclick="appendToDisplay('4')">4</button>
+      <button class="btn" id="5" onclick="appendToDisplay('5')">5</button>
+      <button class="btn" id="6" onclick="appendToDisplay('6')">6</button>
+      <button class="btn operator" id="-" onclick="appendToDisplay('-')">-</button>
+
+      <!-- Row 5 - Numbers 1-3 -->
+      <button class="btn" id="number1-btn" onclick="appendToDisplay('1')">1</button>
+      <button class="btn" id="2" onclick="appendToDisplay('2')">2</button>
+      <button class="btn" id="3" onclick="appendToDisplay('3')">3</button>
+      <button class="btn operator" id="+" onclick="appendToDisplay('+')">+</button>
+
+      <!-- Row 6 - Bottom row -->
+      <button class="btn" id="toggle" onclick="toggleSign()">±</button>
+      <button class="btn" id="0" onclick="appendToDisplay('0')">0</button>
+      <button class="btn" id="." onclick="appendToDisplay('.')">.</button>
+      <button class="btn operator" id="equals" onclick="calculate()">=</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

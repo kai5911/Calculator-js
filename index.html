@@ -13,7 +13,7 @@
     <div class="buttons" id="buttons">
       <!-- Row 1 - Special functions -->
       <button class="btn percent" id="percent" onclick="appendToDisplay('%')">%</button>
-      <button class="btn CE" id="clearE" onclick="clearEntry()">CE</button>
+      <button class="btn CE" id="clearE" onclick="clearDisplay()">CE</button>
       <button class="btn clear" id="clear" onclick="clearDisplay()">C</button>
       <button class="btn" id="backspace" onclick="deleteLast()">←</button>
 
@@ -42,7 +42,7 @@
       <button class="btn operator" id="+" onclick="appendToDisplay('+')">+</button>
 
       <!-- Row 6 - Bottom row -->
-      <button class="btn" id="toggle" onclick="toggleSign()">±</button>
+      <!-- <button class="btn" id="toggle" onclick="toggleSign()">±</button> -->
       <button class="btn" id="0" onclick="appendToDisplay('0')">0</button>
       <button class="btn" id="." onclick="appendToDisplay('.')">.</button>
       <button class="btn operator" id="equals" onclick="calculate()">=</button>

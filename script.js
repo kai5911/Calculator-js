@@ -1,10 +1,16 @@
+
 // display
 
 const display = document.getElementById('display')
 
+
 // basic function
 
 function appendToDisplay(value) {
+  if (display.value === '.' && display.value.includes('.')) {
+    return;
+  }
+
   if (display.value === '0' && value !== '.') {
     display.value = value;
   } else {
@@ -14,7 +20,8 @@ function appendToDisplay(value) {
 
 function calculate() {
   try {
-    display.value = eval(display.value);
+    let expression = display.value.replace('%', '/100');
+    display.value = eval(expression);
   } catch {
     display.value = "Error";
   }
@@ -36,7 +43,7 @@ function deleteLast() {
 
 function square() {
   const numSq = parseFloat(display.value);
-  if (!isNaN(num)) {
+  if (!isNaN(numSq)) {
     const resultSq = numSq * numSq;
     display.value = resultSq.toString();
   }
@@ -54,7 +61,7 @@ function inverse() {
 
 function squareRoot() {
   const numSr = parseFloat(display.value);
-  if (!isNaN(numSr)) {
+  if (!isNaN(numSr) && numSr >= 0) {
     const resultSr = Math.sqrt(numSr);
     display.value = resultSr.toString();
   } else {
